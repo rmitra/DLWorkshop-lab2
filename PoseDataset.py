@@ -16,14 +16,6 @@ class PoseDataset(data.Dataset):
 
         self.cameras, self.pose_2d, self.pose_3d = self.merge_videos()
 
-        if split == 'train':
-            self.subjects = opt.subjects_train.split(',')
-        else:
-            if not opt.render:
-                self.subjects = opt.subjects_test.split(',')
-            else:
-                self.subjects_test = [opt.viz_subject]
-
         self.n_samples = self.pose_2d.shape[0]
         self.real_ids = np.arange(self.n_samples)
         self.gen_ids = np.arange(self.n_samples)
