@@ -19,6 +19,8 @@ class PoseDataset(data.Dataset):
         self.n_samples = self.pose_2d.shape[0]
         self.real_ids = np.arange(self.n_samples)
         self.gen_ids = np.arange(self.n_samples)
+        
+        print('\n Loaded {} samples'.format(self.n_samples))
 
     def merge_videos(self):
         subject_map = {'S1': 1, 'S5': 5, 'S6': 6, 'S7': 7, 'S8': 8, 'S9': 9, 'S11': 11}
