@@ -26,7 +26,7 @@ class Lifter(nn.Module):
         self.pose_reg = nn.Sequential(
                             nn.Linear(2*self.num_joints, self.hidden_dim),
                             nn.LeakyReLU(0.1),
-                            ResBlock(self.hidden_dim)
+                            ResBlock(self.hidden_dim),
                             ResBlock(self.hidden_dim),
                             ResBlock(self.hidden_dim),
                             nn.Linear(self.hidden_dim, self.hidden_dim),
